@@ -15,7 +15,6 @@ export default async function Home() {
     <div className="space-y-12 pb-20">
       {/* 1. Hero Banner */}
       <section className="relative h-125 flex items-center justify-center bg-gray-900 text-white overflow-hidden">
-        {/* Next.js Optimized Background Image */}
         <Image 
           src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1469" 
           alt="Modern interior with tiles"

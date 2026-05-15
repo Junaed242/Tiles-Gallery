@@ -17,8 +17,8 @@ export default function RegisterPage() {
       email,
       password,
       name,
-      image: photoUrl, // Photo URL maps to 'image' in BetterAuth
-      callbackURL: "/login" // Navigate to login after registration
+      image: photoUrl,
+      callbackURL: "/login"
     }, {
       onSuccess: () => {
         toast.success("Account created! Please login.");
