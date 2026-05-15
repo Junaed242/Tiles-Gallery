@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation"; 
 
 export default async function TileDetails({ params }) {
   // 1. INSTRUCTOR STYLE PROTECTION
@@ -10,13 +11,17 @@ export default async function TileDetails({ params }) {
     headers: await headers(),
   });
 
+  const { id } = await params;
+  const res = await fetch(`http://localhost:5000/tiles/${id}`, { cache: "no-store" });
+
+  if (!res.ok) {
+    notFound();
+  }
+
   if (!session) {
     redirect("/login");
   }
-
-  // 2. FETCH DATA
-  const { id } = await params;
-  const res = await fetch(`http://localhost:5000/tiles/${id}`, { cache: "no-store" });
+  
   const tile = await res.json();
 
   if (!tile.id) return <div className="text-center py-20 text-white">Tile not found</div>;
