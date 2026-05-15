@@ -1,13 +1,9 @@
 import AllTilesGallery from "@/components/AllTilesGallery";
+import { proxy } from "@/lib/proxy";
 
-async function getAllTiles() {
-  const res = await fetch("http://localhost:5000/tiles", { cache: 'no-store' });
-  if (!res.ok) return [];
-  return res.json();
-}
 
 export default async function AllTilesPage() {
-  const tiles = await getAllTiles();
+  const tiles = await proxy("/tiles");
 
   return (
     <div className="min-h-screen bg-[#0A0A0B] text-white">

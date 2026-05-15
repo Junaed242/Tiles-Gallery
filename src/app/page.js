@@ -1,15 +1,13 @@
 import Marquee from "react-fast-marquee";
 import Link from "next/link";
 import Image from "next/image";
+import { proxy } from "@/lib/proxy";
 
-async function getFeaturedTiles() {
-  const res = await fetch("http://localhost:5000/tiles", { cache: 'no-store'});
-  const data = await res.json();
-  return data.slice(0, 4);
-}
+
 
 export default async function Home() {
-  const featuredTiles = await getFeaturedTiles();
+  const tiles = await proxy("/tiles");
+  const featuredTiles = tiles.slice(0, 4);
 
   return (
     <div className="space-y-12 pb-20">

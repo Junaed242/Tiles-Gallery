@@ -3,16 +3,16 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation"; 
+import { notFound } from "next/navigation";
+import { proxy } from "@/lib/proxy";
+
 
 export default async function TileDetails({ params }) {
-  // 1. INSTRUCTOR STYLE PROTECTION
+const { id } = await params;
+  const tile = await proxy(`/tiles/${id}`);
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
-  const { id } = await params;
-  const res = await fetch(`http://localhost:5000/tiles/${id}`, { cache: "no-store" });
 
   if (!res.ok) {
     notFound();
@@ -21,8 +21,6 @@ export default async function TileDetails({ params }) {
   if (!session) {
     redirect("/login");
   }
-  
-  const tile = await res.json();
 
   if (!tile.id) return <div className="text-center py-20 text-white">Tile not found</div>;
 
