@@ -1,39 +1,68 @@
-import { Link } from "@heroui/react";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t mt-12">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Brand Section */}
-          <div>
-            <h3 className="font-bold text-xl mb-4">TileGallery</h3>
-            <p className="text-gray-600 text-sm">
-              Discover the perfect aesthetic for your home with our premium collection of globally sourced tiles.
+    <footer className="bg-base-100 border-t">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          
+          {/* Brand Section - Matches Navbar Logo */}
+          <div className="col-span-1 md:col-span-1 space-y-4">
+            <Link href="/" className="text-xl font-bold italic">
+              <span className="text-primary">Tile</span>Gallery
+            </Link>
+            <p className="text-base-content/70 text-sm leading-relaxed">
+              Elevating spaces with premium surfaces. Discover your perfect aesthetic with our curated collection.
             </p>
           </div>
 
-          {/* Social Media */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
-            <div className="flex justify-center md:justify-start gap-6 text-2xl text-gray-500">
-              <Link href="#" color="foreground"><FaFacebook /></Link>
-              <Link href="#" color="foreground"><FaTwitter /></Link>
-              <Link href="#" color="foreground"><FaInstagram /></Link>
-            </div>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6">Explore</h4>
+            <ul className="space-y-3 text-sm text-base-content/70">
+              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link href="/all-tiles" className="hover:text-primary transition-colors">All Tiles</Link></li>
+              <li><Link href="/my-profile" className="hover:text-primary transition-colors">My Profile</Link></li>
+            </ul>
           </div>
 
-          {/* Contact Us */}
+          {/* Contact Section */}
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <p className="text-gray-600 text-sm">Email: info@tilegallery.com</p>
-            <p className="text-gray-600 text-sm">Phone: +1 234 567 890</p>
-            <p className="text-gray-600 text-sm">Address: 123 Tile St, Design City</p>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6">Contact Us</h4>
+            <ul className="space-y-3 text-sm text-base-content/70">
+              <li>info@tilegallery.com</li>
+              <li>+1 (234) 567-890</li>
+              <li>123 Studio St, Design District</li>
+            </ul>
+          </div>
+
+          {/* Social Section */}
+          <div>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6">Follow Us</h4>
+            <div className="flex gap-5 text-xl">
+              <Link href="#" className="text-base-content/60 hover:text-primary transition-all">
+                <FaFacebook />
+              </Link>
+              <Link href="#" className="text-base-content/60 hover:text-primary transition-all">
+                <FaTwitter />
+              </Link>
+              <Link href="#" className="text-base-content/60 hover:text-primary transition-all">
+                <FaInstagram />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="border-t mt-10 pt-6 text-center text-gray-400 text-xs">
-          © {new Date().getFullYear()} TileGallery Project. All rights reserved.
+
+        {/* Bottom Bar */}
+        <div className="border-t border-base-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-base-content/50">
+            © {new Date().getFullYear()} TileGallery. Designed for aesthetic excellence.
+          </p>
+          <div className="flex gap-6 text-xs text-base-content/50">
+            <Link href="#" className="hover:underline">Privacy Policy</Link>
+            <Link href="#" className="hover:underline">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
