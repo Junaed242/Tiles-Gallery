@@ -12,7 +12,7 @@ export default function AllTilesGallery({ initialTiles }) {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="md:px-20 mx-auto px-6 py-12">
       
       {/* Dark Glassmorphism Search Bar */}
       <div className="flex justify-center mb-20 animate__animated animate__fadeInUp">

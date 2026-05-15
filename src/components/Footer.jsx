@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-base-100 border-t">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+      <div className="md:px-20 mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
           {/* Brand Section - Matches Navbar Logo */}

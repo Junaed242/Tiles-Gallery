@@ -26,7 +26,7 @@ export default async function Home() {
           <h1 className="text-5xl md:text-7xl font-bold animate__animated animate__fadeInDown">
             Discover Your Perfect Aesthetic
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+          <p className="text-lg md:text-xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
             Explore our premium gallery of hand-picked tiles designed to elevate your space.
           </p>
           <div className="animate__animated animate__zoomIn animate__delay-2s">
@@ -48,7 +48,7 @@ export default async function Home() {
       </div>
 
       {/* 3. Featured Tiles Section */}
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="md:px-20 mx-auto px-6">
         <div className="flex justify-between items-end mb-8">
           <div>
             <h2 className="text-3xl font-bold">Featured Tiles</h2>
@@ -60,7 +60,6 @@ export default async function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredTiles.map((tile) => (
             <div key={tile.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow border overflow-hidden">
-              {/* Image Container with fixed height */}
               <figure className="relative h-48 w-full">
                 <Image 
                   src={tile.image} 

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSession, authClient } from "@/lib/auth-client"; // Real Auth
 
@@ -67,7 +68,7 @@ export default function AppNavbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLinks}
           </ul>
@@ -89,7 +90,7 @@ export default function AppNavbar() {
              {/* User Avatar */}
              <div className="avatar">
                 <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img src={session.user.image || "https://ui-avatars.com/api/?name=" + session.user.name} />
+                  <Image width={32} height={32} src={session.user.image || "https://ui-avatars.com/api/?name=" + session.user.name} alt={session.user.name || "User avatar"} />
                 </div>
              </div>
              <button onClick={handleLogout} className="btn btn-error btn-outline btn-sm">Logout</button>

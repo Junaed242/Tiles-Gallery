@@ -39,7 +39,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0A0A0B] px-6 py-12">
-      <div className="w-full max-w-md bg-[#111112] border border-white/5 p-10 rounded-[2.5rem] shadow-2xl">
+      <div className="w-full max-w-sm bg-[#111112] border border-white/5 p-10 rounded-[2.5rem] shadow-2xl">
         <h2 className="text-3xl font-bold text-white text-center mb-2">Create Account</h2>
         <p className="text-slate-500 text-center mb-8 text-sm">Join the TileGallery community</p>
 

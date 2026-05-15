@@ -31,7 +31,7 @@ export default async function TileDetails({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-[#111112] p-8 md:p-12 rounded-[3rem] border border-white/5 animate__animated animate__fadeIn">
           
           {/* Left: Visuals */}
-          <div className="relative h-[400px] md:h-[600px] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
+          <div className="relative h-100 md:h-150 w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
             <Image 
               src={tile.image} 
               alt={tile.title} 
@@ -74,7 +74,7 @@ export default async function TileDetails({ params }) {
                 <p className="text-3xl font-bold text-white">${tile.price}</p>
                 <p className="text-xs text-success">{tile.inStock ? "● In Stock" : "○ Out of Stock"}</p>
               </div>
-              <button className="btn btn-primary btn-lg px-12 rounded-2xl">Inquiry Now</button>
+              <button className="btn btn-primary btn-lg rounded-2xl">Inquiry Now</button>
             </div>
           </div>
         </div>
