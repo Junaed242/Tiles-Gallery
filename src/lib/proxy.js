@@ -1,3 +1,5 @@
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 export const proxy = async (endpoint) => {
     const baseURL = process.env.NEXT_PUBLIC_JSON_SERVER_URL || "http://localhost:5000";

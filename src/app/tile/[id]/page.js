@@ -14,10 +14,6 @@ const { id } = await params;
     headers: await headers(),
   });
 
-  if (!res.ok) {
-    notFound();
-  }
-
   if (!session) {
     redirect("/login");
   }
