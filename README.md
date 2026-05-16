@@ -3,7 +3,7 @@
 A sophisticated web application to showcase and manage a premium tile gallery, built with Next.js and BetterAuth.
 
 **Live URL:** [Vercel](https://tiles-gallery-vert.vercel.app/)
-**Server API:** [Insert your Render Link Here]
+**Server API:** [Render](https://tiles-api-1x4b.onrender.com/tiles)
 
 ## 🎯 Purpose
 This project is designed to provide users with a seamless experience to discover, search, and view details of high-end architectural tiles. It emphasizes performance, secure authentication, and a clean, modern "Dark Studio" aesthetic.
