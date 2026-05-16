@@ -1,21 +1,34 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { proxy } from "@/lib/proxy";
 
-
 export default async function TileDetails({ params }) {
-const { id } = await params;
-  const tile = await proxy(`/tiles/${id}`);
+  // 1. CHECK SESSION FIRST (Private Route Requirement)
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
+  // If not logged in, go to login immediately
   if (!session) {
     redirect("/login");
+  }
+
+  // 2. FETCH DATA ONLY IF LOGGED IN
+  const { id } = await params;
+  let tile = null;
+  
+  try {
+    tile = await proxy(`/tiles/${id}`);
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+
+  // 3. CHECK IF TILE EXISTS
+  if (!tile || !tile.id) {
+    notFound();
   }
 
   if (!tile.id) return <div className="text-center py-20 text-white">Tile not found</div>;

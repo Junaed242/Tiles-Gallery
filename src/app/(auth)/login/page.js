@@ -14,7 +14,7 @@ export default function LoginPage() {
     await signIn.email({
       email: data.email,
       password: data.password,
-      callbackURL: "/" // Navigate to home after login
+      callbackURL: "/"
     }, {
       onSuccess: () => {
         toast.success("Welcome back!");
