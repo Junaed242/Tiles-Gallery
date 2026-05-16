@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏺 TileGallery - Premium Aesthetic Surfaces
 
-## Getting Started
+A sophisticated web application to showcase and manage a premium tile gallery, built with Next.js and BetterAuth.
 
-First, run the development server:
+**Live URL:** [Vercel](https://tiles-gallery-vert.vercel.app/)
+**Server API:** [Insert your Render Link Here]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Purpose
+This project is designed to provide users with a seamless experience to discover, search, and view details of high-end architectural tiles. It emphasizes performance, secure authentication, and a clean, modern "Dark Studio" aesthetic.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Key Features
+- **Secure Authentication:** Implemented BetterAuth with MongoDB adapter, featuring Email/Password and Google Social Login.
+- **Dynamic Gallery:** Real-time search functionality on the "All Tiles" page.
+- **Private Routes:** User profile and Tile Details are protected and require authentication.
+- **Profile Management:** Users can update their display name and profile picture URL.
+- **Optimized UI:** High-performance image loading using Next.js Image component and smooth animations via Animate.css.
+- **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop views.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack & Packages
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS & DaisyUI
+- **Authentication:** BetterAuth
+- **Database:** MongoDB (Users/Sessions) & JSON Server (Tile Data)
+- **Libraries:** 
+  - `animate.css` (Entrance animations)
+  - `react-fast-marquee` (Hero announcements)
+  - `react-hook-form` (Form handling)
+  - `react-hot-toast` (Notifications)
+  - `react-icons` (UI elements)
