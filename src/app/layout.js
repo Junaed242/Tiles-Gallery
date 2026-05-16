@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
 import AppNavbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,17 +13,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light"> 
       <body className={inter.className} suppressHydrationWarning>
-        <Providers>
-          <div className="min-h-screen flex flex-col">
-            <AppNavbar />
-            <main className="grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
+        <div className="min-h-screen flex flex-col bg-base-100 text-base-content">
+          <AppNavbar />
+          <main className="grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        
+        <Toaster position="top-center" />
       </body>
     </html>
   );
