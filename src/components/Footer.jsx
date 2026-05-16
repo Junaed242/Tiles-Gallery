@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="md:px-20 mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
-          {/* Brand Section - Matches Navbar Logo */}
+          {/* Brand Section */}
           <div className="col-span-1 md:col-span-1 space-y-4">
             <Link href="/" className="text-xl font-bold italic">
               <span className="text-primary">Tile</span>Gallery

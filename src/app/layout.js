@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className} suppressHydrationWarning>
         <div className="min-h-screen flex flex-col bg-base-100 text-base-content">
           <AppNavbar />
-          <main className="grow">
+          <main>
             {children}
           </main>
           <Footer />

@@ -10,7 +10,6 @@ export default function UpdateInformationPage() {
   const { register, handleSubmit, setValue } = useForm();
   const router = useRouter();
 
-  // 1. Pre-fill the form with existing user data once the session loads
   useEffect(() => {
     if (session?.user) {
       setValue("name", session.user.name);
@@ -22,7 +21,6 @@ export default function UpdateInformationPage() {
     const loadingToast = toast.loading("Syncing changes with gallery...");
 
     try {
-      // 2. USE THE v1.x SYNTAX: authClient.updateUser
       const { data, error } = await authClient.updateUser({
         name: formData.name,
         image: formData.image,
@@ -34,11 +32,9 @@ export default function UpdateInformationPage() {
 
       toast.success("Profile updated successfully!", { id: loadingToast });
 
-      // 3. REFRESH & REDIRECT
-      // router.refresh() updates the server components (like the Navbar)
       router.refresh();
       
-      // Delay navigation slightly to let the database catch up
+
       setTimeout(() => {
         router.push("/my-profile");
       }, 800);
@@ -66,7 +62,6 @@ export default function UpdateInformationPage() {
         </header>
 
         <form onSubmit={handleSubmit(onUpdateSubmit)} className="space-y-6">
-          {/* Field: Name */}
           <div className="form-control">
             <label className="label">
               <span className="label-text text-slate-400 font-bold uppercase text-[10px] tracking-widest">
@@ -81,7 +76,6 @@ export default function UpdateInformationPage() {
             />
           </div>
 
-          {/* Field: Image URL */}
           <div className="form-control">
             <label className="label">
               <span className="label-text text-slate-400 font-bold uppercase text-[10px] tracking-widest">
@@ -96,7 +90,6 @@ export default function UpdateInformationPage() {
             />
           </div>
 
-          {/* Action Buttons */}
           <div className="flex gap-4 pt-6">
             <button
               type="button"

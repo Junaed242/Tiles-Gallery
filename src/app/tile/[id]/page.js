@@ -42,7 +42,6 @@ export default async function TileDetails({ params }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-[#111112] p-8 md:p-12 rounded-[3rem] border border-white/5 animate__animated animate__fadeIn">
           
-          {/* Left: Visuals */}
           <div className="relative h-100 md:h-150 w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
             <Image 
               src={tile.image} 

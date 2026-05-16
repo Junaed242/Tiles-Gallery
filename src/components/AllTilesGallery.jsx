@@ -14,7 +14,6 @@ export default function AllTilesGallery({ initialTiles }) {
   return (
     <div className="md:px-20 mx-auto px-6 py-12">
       
-      {/* Dark Glassmorphism Search Bar */}
       <div className="flex justify-center mb-20 animate__animated animate__fadeInUp">
         <div className="relative w-full max-w-2xl group">
           <span className="absolute inset-y-0 left-0 pl-6 flex items-center text-slate-500 group-focus-within:text-primary transition-colors">
@@ -30,7 +29,6 @@ export default function AllTilesGallery({ initialTiles }) {
         </div>
       </div>
 
-      {/* Dark Modern Grid */}
       {filteredTiles.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredTiles.map((tile) => (
@@ -38,7 +36,6 @@ export default function AllTilesGallery({ initialTiles }) {
               key={tile.id} 
               className="group bg-[#111112] rounded-[2rem] overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-700 animate__animated animate__fadeIn"
             >
-              {/* Image with Dark Overlay on Hover */}
               <figure className="relative h-80 w-full overflow-hidden">
                 <Image
                   src={tile.image}
